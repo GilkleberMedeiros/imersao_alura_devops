@@ -1,0 +1,12 @@
+services: 
+  app: 
+    build: . # Constroi a imagem a partir do Dockerfile na pasta raiz 
+    container_name: minha-api-fastapi # Nome do container 
+    ports: 
+      - "8000:8000" 
+
+    volumes: 
+      - .:/app # Monta o dir atual (com o codigo) dentro de /app no container 
+    environment: # Variaveis de ambiente do container 
+      - PYTHONBUFFERED=1 # Garante que os logs do python aparecam imediatamente 
+
